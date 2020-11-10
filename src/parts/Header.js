@@ -46,10 +46,10 @@ function Header({ onLight, location }) {
             to="/"
             className={[
               linkColor,
-              " hover:text-teal-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
+              " hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
             ].join(" ")}
           >
-            Home
+            Beranda
           </Link>
         </li>
         <li className="leading-10">
@@ -57,10 +57,10 @@ function Header({ onLight, location }) {
             to="/"
             className={[
               linkColor,
-              " hover:text-teal-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
+              " hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
             ].join(" ")}
           >
-            Pricing
+            Perpustakaan
           </Link>
         </li>
         <li className="leading-10">
@@ -68,10 +68,10 @@ function Header({ onLight, location }) {
             to="/"
             className={[
               linkColor,
-              " hover:text-teal-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
+              " hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
             ].join(" ")}
           >
-            Features
+            Harga
           </Link>
         </li>
         <li className="leading-10">
@@ -79,16 +79,16 @@ function Header({ onLight, location }) {
             to="/"
             className={[
               linkColor,
-              " hover:text-teal-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
+              " hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
             ].join(" ")}
           >
-            Story
+            Ulasan
           </Link>
         </li>
-        <li className="leading-10 mt-6">
+        <li className="leading-10">
           <Link
             to={linkCTA}
-            className="bg-indigo-700 hover:bg-indigo-800 transition-all duration-200 text-white hover:text-teal-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium ml-6"
+            className="bg-indigo-700  hover:bg-green-800 rounded-md transition-all duration-200 text-white hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium ml-6 "
           >
             {textCTA}
           </Link>

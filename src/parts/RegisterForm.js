@@ -47,8 +47,8 @@ function LoginForm({ history }) {
     <div className="flex justify-center items-center pb-24">
       <div className="w-full sm:w-3/12">
         <h1 className="text-4xl text-gray-900 mb-6">
-          <span className="font-bold">Grow Skills</span> From, <br />
-          Anywhere
+          <span className="font-bold">Asah Skil</span>, Dari <br />
+          Mana Saja
         </h1>
         <form onSubmit={submit}>
           <Input
@@ -56,8 +56,8 @@ function LoginForm({ history }) {
             error={ERRORS?.name?.message}
             name="name"
             onChange={setState}
-            placeholder="Your Name"
-            labelName="Full Name"
+            placeholder="Nama kamu"
+            labelName="Nama Lengkap"
           />
 
           <Input
@@ -66,8 +66,8 @@ function LoginForm({ history }) {
             name="email"
             type="email"
             onChange={setState}
-            placeholder="Your email address"
-            labelName="Email Address"
+            placeholder="Alamat email kamu"
+            labelName="Alamat Email"
           />
 
           <Input
@@ -76,22 +76,22 @@ function LoginForm({ history }) {
             name="password"
             type="password"
             onChange={setState}
-            placeholder="Your Password"
+            placeholder="Password kamu"
             labelName="Password"
           />
 
           <Select
-            labelName="Occupation"
+            labelName="Peminatan"
             name="profession"
             value={profession}
-            fallbackText="Select your focus"
+            fallbackText="Pilih Peminatan"
             onClick={setState}
           >
-            <option value="">Select your focus</option>
+            <option value="">Pilih peminatan kamu</option>
             <option value="Web Developer">Web Designer</option>
             <option value="Frontend Developer">Frontend Developer</option>
             <option value="Backend Developer">Backend Developer</option>
-            <option value="others">others</option>
+            <option value="others">lainnya</option>
           </Select>
 
           {profession === "others" && (
@@ -101,14 +101,14 @@ function LoginForm({ history }) {
               name="otherProfession"
               type="text"
               onChange={setState}
-              placeholder="Your occupation"
-              labelName="Other Occupation"
+              placeholder="Peminatan kamu"
+              labelName="Peminatan Lainnya"
             />
           )}
 
           <button
             type="submit"
-            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+            className="bg-orange-500 rounded-md hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
           >
             Daftar
           </button>
@@ -133,7 +133,7 @@ function LoginForm({ history }) {
             <p className="text-gray-900 mb-2">
               Semua materi terstruktrur baik dan mentor yang sangat lihai
             </p>
-            <span className="text-gray-600">James, Apps Developer</span>
+            <span className="text-gray-600">Roy, Apps Developer</span>
           </div>
         </div>
       </div>

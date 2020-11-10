@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -7,6 +7,8 @@ import users from "constants/api/users";
 import { setAuthorizationHeader } from "configs/axios";
 
 import { populateProfile } from "store/actions/users";
+import Input from "components/Form/Input";
+import fieldErrors from "helpers/fieldErrors";
 
 import useForm from "helpers/hooks/useForm";
 
@@ -17,6 +19,7 @@ function LoginForm({ history }) {
     email: "",
     password: "",
   });
+  const [errors, seterrors] = useState(null);
 
   function submit(e) {
     e.preventDefault();
@@ -28,9 +31,8 @@ function LoginForm({ history }) {
         users.details().then((detail) => {
           dispatch(populateProfile(detail.data));
           const production =
-            process.env.REACT_APP_FRONTPAGE_URL ===
-            "https://micro.buildwithangga.id"
-              ? "Domain = micro.buildwithangga.id"
+            process.env.REACT_APP_FRONTPAGE_URL === "https://dimaspurwanto.xyz"
+              ? "Domain = dimaspurwanto.xyz"
               : "";
           localStorage.setItem(
             "BWAMICRO:token",
@@ -57,61 +59,20 @@ function LoginForm({ history }) {
           history.push(redirect || "/");
         });
       })
-      .catch((err) => {});
+      .catch((err) => {
+        seterrors(err?.response?.data?.message);
+        console.log(err?.response?.data?.message);
+      });
   }
+  const ERRORS = fieldErrors(errors);
 
   return (
     <div className="flex justify-center items-center pb-24">
-      <div className="w-full sm:w-3/12">
-        <h1 className="text-4xl text-gray-900 mb-6">
-          <span className="font-bold">Continue</span> Study, <br />
-          Finish your <span className="font-bold">Goals</span>
-        </h1>
-        <form onSubmit={submit}>
-          <div className="flex flex-col mb-4">
-            <label htmlFor="email" className="text-lg mb-2">
-              Email Address
-            </label>
-            <input
-              name="email"
-              type="email"
-              onChange={setState}
-              className="bg-white focus:outline-none border w-full px-6 py-3 w-1/2 border-gray-600 focus:border-teal-500"
-              value={email}
-              placeholder="Your email addres"
-            />
-          </div>
-
-          <div className="flex flex-col mb-4">
-            <label htmlFor="password" className="text-lg mb-2">
-              Password
-            </label>
-            <input
-              name="password"
-              type="password"
-              onChange={setState}
-              className="bg-white focus:outline-none border w-full px-6 py-3 w-1/2 border-gray-600 focus:border-teal-500"
-              value={password}
-              placeholder="Your password addres"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
-          >
-            Masuk
-          </button>
-        </form>
-      </div>
-
-      <div className="w-1/12 hidden sm:block"></div>
-
       <div className="w-5/12 hidden sm:block justify-end pt-24 pr-16">
         <div className="relative" style={{ width: 369, height: 440 }}>
           <div
-            className="absolute border-indigo-700 border-2 -mt-8 -ml-16 left-0"
-            style={{ width: 324, height: 374 }}
+            className="absolute border-orange-400 border-2 -mt-8 -ml-16 left-0"
+            style={{ width: 370, height: 550 }}
           ></div>
           <div className="absolute w-full h-full -mb-8 -ml-8">
             <img
@@ -124,11 +85,52 @@ function LoginForm({ history }) {
             style={{ width: 290 }}
           >
             <p className="text-gray-900 mb-2">
-              Metode belajar yang santai seperti nonton drakor di Netflix
+              Metode belajar yang santai dan seru seperti nonton film drakor
             </p>
-            <span className="text-gray-600">Alyssa, Apps Developer</span>
+            <span className="text-gray-600">Yana, Apps Developer</span>
           </div>
         </div>
+      </div>
+
+      <div className="w-1/12 hidden sm:block"></div>
+
+      <div className="w-full sm:w-3/12">
+        <h1 className="text-4xl text-gray-900 mb-6">
+          <span className="font-bold">Selesaikan</span> yang <br />
+          Kamu <span className="font-bold">Mulai</span>
+        </h1>
+        <form onSubmit={submit}>
+          <div className="flex flex-col">
+            <Input
+              value={email}
+              error={ERRORS?.email?.message}
+              name="email"
+              type="email"
+              onChange={setState}
+              placeholder="Alamat email kamu"
+              labelName="Alamat Email"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <Input
+              value={password}
+              error={ERRORS?.password?.message}
+              name="password"
+              type="password"
+              onChange={setState}
+              placeholder="Password kamu"
+              labelName="Password"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner rounded-md text-white px-6 py-3 mt-2 w-full"
+          >
+            Masuk
+          </button>
+        </form>
       </div>
     </div>
   );

@@ -44,8 +44,8 @@ export default function Select({
       <div className="relative" ref={selectWrapper} onClick={toggleSelect}>
         <div
           className={[
-            "flex justify-between cursor-pointer bg-white focus:outline-none transition-all duration-200 border px-4 py-3 w-full",
-            toggle ? "border-teal-500" : "border-gray-600",
+            "flex justify-between cursor-pointer rounded-md bg-white focus:outline-none transition-all duration-200 border px-4 py-3 w-full",
+            toggle ? "border-green-500" : "border-gray-600",
             className,
           ].join(" ")}
         >
