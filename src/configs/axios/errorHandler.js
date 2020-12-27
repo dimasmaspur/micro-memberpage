@@ -12,8 +12,8 @@ export default function errorHandler(error) {
         message = "Something went terribly wrong";
       else if (error.response.status === 403 && !originalRequest._retry) {
         originalRequest._retry = true;
-        const session = localStorage["BWAMICRO:token"]
-          ? JSON.parse(localStorage["BWAMICRO:token"])
+        const session = localStorage["SINAU:token"]
+          ? JSON.parse(localStorage["SINAU:token"])
           : null;
         return users
           .refresh({
@@ -24,7 +24,7 @@ export default function errorHandler(error) {
             if (res.data) {
               setAuthorizationHeader(res.data.token);
               localStorage.setItem(
-                "BWAMICRO:token",
+                "SINAU:token",
                 JSON.stringify({
                   ...session,
                   token: res.data.token,
@@ -36,7 +36,7 @@ export default function errorHandler(error) {
               return axios(originalRequest);
             } else {
               window.location.href = "/login";
-              localStorage.removeItem("BWAMICRO:token");
+              localStorage.removeItem("SINAU:token");
             }
           });
       } else message = error.response.data.message;

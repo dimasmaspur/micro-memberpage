@@ -35,14 +35,14 @@ function LoginForm({ history }) {
               ? "Domain = dimaspurwanto.xyz"
               : "";
           localStorage.setItem(
-            "BWAMICRO:token",
+            "SINAU:token",
             JSON.stringify({
               ...res.data,
               email: email,
             })
           );
 
-          const redirect = localStorage.getItem("BWAMICRO:redirect");
+          const redirect = localStorage.getItem("SINAU:redirect");
           const userCookie = {
             name: detail.data.name,
             thumbnail: detail.data.avatar,
@@ -52,7 +52,7 @@ function LoginForm({ history }) {
             new Date().getTime() + 7 * 24 * 60 * 60 * 1000
           );
 
-          document.cookie = `BWAMICRO:user=${JSON.stringify(
+          document.cookie = `SINAU:user=${JSON.stringify(
             userCookie
           )}; expires=${expires.toUTCString()}; path:/; ${production}`;
 

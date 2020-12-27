@@ -32,8 +32,8 @@ function App() {
 
   useEffect(() => {
     let session = null;
-    if (localStorage.getItem("BWAMICRO:token")) {
-      session = JSON.parse(localStorage.getItem("BWAMICRO:token"));
+    if (localStorage.getItem("SINAU:token")) {
+      session = JSON.parse(localStorage.getItem("SINAU:token"));
       setAuthorizationHeader(session.token);
 
       users.details().then((details) => {

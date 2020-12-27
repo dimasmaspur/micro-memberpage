@@ -8,9 +8,9 @@ const MemberRoute = ({
   location,
   ...rest
 }) => {
-  const ok = localStorage.getItem("BWAMICRO:token");
+  const ok = localStorage.getItem("SINAU:token");
   console.log(rest);
-  localStorage.removeItem("BWAMICRO:redirect");
+  localStorage.removeItem("SINAU:redirect");
 
   return (
     <Route
@@ -21,8 +21,8 @@ const MemberRoute = ({
         ) : path === "/joined/:class" ? (
           <Redirect to={`/login?path=${location.pathname}`} />
         ) : (
-          <Redirect to={`/private?path=${location.pathname}`} />
-        )
+              <Redirect to={`/private?path=${location.pathname}`} />
+            )
       }
     />
   );

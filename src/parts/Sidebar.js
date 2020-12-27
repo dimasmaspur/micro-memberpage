@@ -20,7 +20,7 @@ function Sidebar({ match, history }) {
 
   function logout() {
     users.logout().then(() => {
-      localStorage.removeItem("BWAMICRO:token");
+      localStorage.removeItem("SINAU:token");
       history.push("/login");
     });
   }
@@ -53,7 +53,7 @@ function Sidebar({ match, history }) {
           style={{ width: 280 }}
         >
           <div className="flex flex-col text-center mt-8">
-            <div className="border border-indigo-500 rounded-full mx-auto p-2 inline-flex  mb-3">
+            <div className="border border-green-500 rounded-full mx-auto p-2 inline-flex  mb-3">
               <div className="rounded-full overflow-hidden">
                 {USERS?.avatar ? (
                   <img
@@ -62,13 +62,13 @@ function Sidebar({ match, history }) {
                     alt={USERS?.name}
                   />
                 ) : (
-                  <DefaultUser className="fill-indigo-500 w-24 h-24"></DefaultUser>
-                )}
+                    <DefaultUser className="fill-indigo-500 w-24 h-24"></DefaultUser>
+                  )}
               </div>
             </div>
 
             <h6 className="text-white text-xl">{USERS?.name ?? "Username"}</h6>
-            <span className="text-indigo-500 text-sm">
+            <span className="text-green-500 text-sm">
               {USERS?.profession ?? "Profession"}
             </span>
           </div>
@@ -92,7 +92,7 @@ function Sidebar({ match, history }) {
                 className={[
                   "nav-link relative flex items-center py-3 px-5 transition-all duration-200 hover:text-white active:text-white focus:outline-none w-full text-left text-indigo-500",
                 ].join(" ")}
-                href={`${process.env.REACT_APP_FRONTPAGE_URL}/library`}
+                href={`${process.env.REACT_APP_FRONTPAGE_URL}/courses`}
               >
                 Library
               </a>
@@ -127,7 +127,7 @@ function Sidebar({ match, history }) {
             <li>
               <button
                 className={[
-                  "nav-link relative text-indigo-500 flex items-center py-3 px-5 transition-all duration-200 hover:text-white active:text-white focus:outline-none w-full text-left",
+                  "nav-link relative text-green-500 flex items-center py-3 px-5 transition-all duration-200 hover:text-white active:text-white focus:outline-none w-full text-left",
                 ].join(" ")}
                 onClick={logout}
               >
