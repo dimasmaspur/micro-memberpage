@@ -98,15 +98,15 @@ function SettingForm({ details }) {
                   alt="Preview"
                 />
               ) : (
-                <DefaultUser
-                  className="fill-indigo-500"
-                  style={{ width: 90, height: 90 }}
-                ></DefaultUser>
-              )}
+                  <DefaultUser
+                    className="fill-indigo-500"
+                    style={{ width: 90, height: 90 }}
+                  ></DefaultUser>
+                )}
             </div>
           </div>
           <div className="w-full flex flex-col">
-            <span className="text-gray-600">Add your picture...</span>
+            <span className="text-gray-600">Tambahkan foto</span>
             <div>
               <input
                 type="file"
@@ -119,7 +119,7 @@ function SettingForm({ details }) {
                 onClick={() => addPicture.current.click()}
                 className="bg-gray-300 hover:bg-gray-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-3"
               >
-                Browse
+                Pilih
               </button>
             </div>
           </div>
@@ -134,8 +134,8 @@ function SettingForm({ details }) {
                 error={ERRORS?.name?.message}
                 name="name"
                 onChange={setKey}
-                placeholder="Your Name"
-                labelName="Full Name"
+                placeholder="Nama Kamu"
+                labelName="Nama Lengkap"
               />
 
               <Input
@@ -144,8 +144,8 @@ function SettingForm({ details }) {
                 name="email"
                 type="email"
                 onChange={setKey}
-                placeholder="Your email address"
-                labelName="Email Address"
+                placeholder="Alamat email kamu"
+                labelName="Alamat Email"
               />
 
               <Input
@@ -154,22 +154,22 @@ function SettingForm({ details }) {
                 name="password"
                 type="password"
                 onChange={setKey}
-                placeholder="Your Password"
+                placeholder="Password Kamu"
                 labelName="Password"
               />
 
               <Select
-                labelName="Occupation"
+                labelName="Peminatan"
                 name="profession"
                 value={state.profession}
-                fallbackText="Select your focus"
+                fallbackText="Pilih peminatan kamu"
                 onClick={setKey}
               >
-                <option value="">Select your focus</option>
+                <option value="">Pilih peminatan kamu</option>
                 <option value="Web Developer">Web Designer</option>
                 <option value="Frontend Developer">Frontend Developer</option>
                 <option value="Backend Developer">Backend Developer</option>
-                <option value="others">others</option>
+                <option value="others">Lainnya</option>
               </Select>
 
               {state.profession === "others" && (
@@ -179,8 +179,8 @@ function SettingForm({ details }) {
                   name="otherProfession"
                   type="text"
                   onChange={setKey}
-                  placeholder="Your occupation"
-                  labelName="Other Occupation"
+                  placeholder="Peminatan kamu"
+                  labelName="Peminatan Lainnya"
                 />
               )}
 

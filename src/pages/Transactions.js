@@ -61,10 +61,10 @@ export default function Transactions() {
               <>
                 <section className="flex flex-col mt-8 pl-12 sm:pl-0">
                   <h1 className="text-xl sm:text-4xl text-gray-900 font-medium">
-                    Transactions
+                    Transaksi
                   </h1>
                   <p className="text-sm sm:text-lg text-gray-600">
-                    Keep on tract what you've invested
+                    Lihat riwayat transaksi
                   </p>
                 </section>
                 <section className="flex flex-wrap flex-col mt-8">
@@ -125,8 +125,8 @@ export default function Transactions() {
                 </section>
               </>
             ) : (
-              <EmptyState />
-            ))}
+                  <EmptyState />
+                ))}
         </div>
       </main>
     </div>

@@ -23,10 +23,9 @@ function EmptyState() {
           src={`${process.env.PUBLIC_URL}/assets/images/illustration-myclass-empty.jpg`}
           alt="Success join class"
         />
-        <h1 className="text-3xl text-gray-900 mt-12">Time to Invest</h1>
+        <h1 className="text-3xl text-gray-900 mt-12">Waktunya Investasi Ilmu</h1>
         <p className="text-lg text-gray-600 mt-4 mb-8 mx-auto text-center">
-          It seems you don’t have any class yet so let’s get them and grow your
-          skills
+          Belum ada kelas yang diikuti, jadi ayo investasikan waktumu dan tingkatkan kemampuan
         </p>
         <a
           target="_blank"
@@ -71,10 +70,10 @@ export default function MyClass() {
               <>
                 <section className="flex flex-col mt-8 pl-12 sm:pl-0">
                   <h1 className="text-xl sm:text-4xl text-gray-900 font-medium">
-                    My Class
+                    Kelas Saya
                   </h1>
                   <p className="text-sm sm:text-lg text-gray-600">
-                    Continue learning to pursue your dreams
+                    Lanjutkan belajar untuk mewujudkan mimpi
                   </p>
                 </section>
                 <section className="flex flex-col mt-8">
@@ -91,8 +90,8 @@ export default function MyClass() {
                 </section>
               </>
             ) : (
-              <EmptyState></EmptyState>
-            ))}
+                <EmptyState></EmptyState>
+              ))}
         </div>
       </main>
     </div>

@@ -41,50 +41,30 @@ function Header({ onLight, location }) {
           toggleMenu ? "opacity-100 visible z-20" : "opacity-0 invisible",
         ].join(" ")}
       >
-        <li className="leading-10">
-          <Link
-            to="/"
-            className={[
-              linkColor,
-              " hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
-            ].join(" ")}
-          >
+        <a
+          rel="noopener noreferrer"
+          className={[
+            "hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
+          ].join(" ")}
+          href={`${process.env.REACT_APP_FRONTPAGE_URL}`}
+        >
+          <li className="leading-10">
             Beranda
-          </Link>
         </li>
-        <li className="leading-10">
-          <Link
-            to="/"
-            className={[
-              linkColor,
-              " hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
-            ].join(" ")}
-          >
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className={[
+            "hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
+          ].join(" ")}
+          href={`${process.env.REACT_APP_FRONTPAGE_URL}/courses`}
+        >
+          <li className="leading-10">
             Perpustakaan
-          </Link>
         </li>
-        <li className="leading-10">
-          <Link
-            to="/"
-            className={[
-              linkColor,
-              " hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
-            ].join(" ")}
-          >
-            Harga
-          </Link>
-        </li>
-        <li className="leading-10">
-          <Link
-            to="/"
-            className={[
-              linkColor,
-              " hover:text-green-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium",
-            ].join(" ")}
-          >
-            Ulasan
-          </Link>
-        </li>
+        </a>
+
         <li className="leading-10">
           <Link
             to={linkCTA}

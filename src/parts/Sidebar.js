@@ -82,7 +82,7 @@ function Sidebar({ match, history }) {
                 ].join(" ")}
                 to="/"
               >
-                My Class
+                Kelas Saya
               </Link>
             </li>
             <li>
@@ -94,7 +94,7 @@ function Sidebar({ match, history }) {
                 ].join(" ")}
                 href={`${process.env.REACT_APP_FRONTPAGE_URL}/courses`}
               >
-                Library
+                Perpustakaan
               </a>
             </li>
             <li>
@@ -105,7 +105,7 @@ function Sidebar({ match, history }) {
                 ].join(" ")}
                 to="/transactions"
               >
-                Transactions
+                Transaksi
               </Link>
             </li>
             <li>
@@ -116,7 +116,7 @@ function Sidebar({ match, history }) {
                 ].join(" ")}
                 to="/settings"
               >
-                Settings
+                Pengaturan
               </Link>
             </li>
           </ul>
@@ -131,7 +131,7 @@ function Sidebar({ match, history }) {
                 ].join(" ")}
                 onClick={logout}
               >
-                Logout
+                Keluar
               </button>
             </li>
           </ul>
